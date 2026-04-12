@@ -20,14 +20,14 @@ export default function GuidedViewer({ route, onExit }) {
   };
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden font-['Inter']">
+    <div className="relative w-full h-[100dvh] bg-black overflow-hidden font-['Inter']">
       
       {/* 360 Viewer Canvas */}
       {/* Notice that we change the key when currentRoom changes so the viewer can completely remount or we could just pass src and hope react-photo-sphere-viewer updates gracefully (it usually does) */}
       <ReactPhotoSphereViewer
         key={currentRoom.id + currentIndex} // Forzamos recarga sencilla para este MVP, o se podría manejar con referencias
         src={currentRoom.panorama}
-        height="100vh"
+        height="100dvh"
         width="100%"
         navbar={['zoom', 'move', 'fullscreen']}
         defaultPitch={0}
@@ -66,7 +66,7 @@ export default function GuidedViewer({ route, onExit }) {
       </div>
 
       {/* HUD Navigation Controls (Bottom Center) */}
-      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-50 pointer-events-auto flex items-center gap-2 md:gap-4 w-full md:w-auto justify-center px-4">
+      <div className="absolute bottom-28 md:bottom-12 left-1/2 -translate-x-1/2 z-50 pointer-events-auto flex items-center gap-2 md:gap-4 w-full md:w-auto justify-center px-4">
         
         {/* Prev Button */}
         <button 

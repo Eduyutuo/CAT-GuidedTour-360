@@ -23,7 +23,7 @@ export default function RoutePlanner({ onStartTour }) {
   }
 
   return (
-    <div className="relative w-full min-h-screen bg-slate-950 lg:overflow-hidden flex flex-col font-['Inter']">
+    <div className="relative w-full h-[100dvh] bg-slate-950 overflow-hidden flex flex-col font-['Inter']">
       {/* Decorative Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/40 via-slate-900 to-slate-950"></div>
@@ -37,10 +37,10 @@ export default function RoutePlanner({ onStartTour }) {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex-1 flex flex-col lg:flex-row h-full pt-20 lg:pt-24 lg:overflow-hidden">
+      <div className="relative z-10 flex-1 min-h-0 flex flex-col lg:flex-row pt-20 lg:pt-24 mt-2 lg:mt-0 lg:overflow-hidden overflow-y-auto">
         
         {/* Left Column: Available Rooms Catalog */}
-        <div className="lg:w-1/2 p-6 lg:p-8 lg:pl-16 flex flex-col lg:h-full lg:overflow-y-auto custom-scrollbar">
+        <div className="lg:w-1/2 p-6 lg:p-8 lg:pl-16 flex flex-col lg:h-full lg:overflow-y-auto custom-scrollbar flex-shrink-0 lg:flex-shrink">
           <div className="mb-6 lg:mb-8">
             <h1 className="text-3xl lg:text-4xl font-extrabold text-white mb-2 lg:mb-3 font-['Outfit'] tracking-tight">Crea tu Ruta de Visita</h1>
             <p className="text-slate-400 text-base lg:text-lg">
@@ -79,7 +79,7 @@ export default function RoutePlanner({ onStartTour }) {
         </div>
 
         {/* Right Column: Built Route */}
-        <div className="lg:w-1/2 p-6 lg:p-8 lg:pr-16 flex flex-col lg:h-full bg-slate-900/30 border-t lg:border-t-0 lg:border-l border-white/5 backdrop-blur-xl lg:overflow-y-auto custom-scrollbar">
+        <div className="lg:w-1/2 p-6 lg:p-8 lg:pr-16 flex flex-col lg:h-full bg-slate-900/30 border-t lg:border-t-0 lg:border-l border-white/5 backdrop-blur-xl lg:overflow-y-auto custom-scrollbar flex-shrink-0 lg:flex-shrink">
           <div className="mb-6 lg:mb-8 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="p-2 sm:p-2.5 rounded-xl bg-blue-600/20 border border-blue-500/30">
