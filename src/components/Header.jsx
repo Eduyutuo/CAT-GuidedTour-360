@@ -11,12 +11,12 @@ export default function Header() {
       initial={{ y: -70, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2, type: 'spring', stiffness: 200, damping: 24 }}
-      className="absolute top-0 left-0 right-0 flex items-center justify-between px-5 py-3.5 pointer-events-none"
+      className="absolute top-0 left-0 right-0 flex items-center justify-between px-3 md:px-5 py-3 md:py-3.5 pointer-events-none"
       style={{ zIndex: 40 }}
     >
       {/* ── Left: Logo ── */}
       <div
-        className="flex items-center gap-3 px-4 py-2.5 rounded-2xl pointer-events-auto"
+        className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 rounded-xl md:rounded-2xl pointer-events-auto"
         style={{
           background: 'rgba(8,6,24,0.75)',
           backdropFilter: 'blur(24px) saturate(180%)',
@@ -26,29 +26,29 @@ export default function Header() {
         }}
       >
         <div
-          className="flex items-center justify-center w-9 h-9 rounded-xl flex-shrink-0"
+          className="flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-lg md:rounded-xl flex-shrink-0"
           style={{
             background: 'linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%)',
             boxShadow: '0 4px 14px rgba(124,58,237,0.5)',
           }}
         >
-          <Building2 size={19} color="white" />
+          <Building2 size={16} className="md:w-[19px] md:h-[19px]" color="white" />
         </div>
 
         <div className="leading-tight">
           <p
-            className="text-white font-black tracking-tight"
-            style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1rem' }}
+            className="text-white font-black tracking-tight text-sm md:text-base"
+            style={{ fontFamily: 'Outfit, sans-serif' }}
           >
-            CAT Corporación
+            CAT <span className="hidden sm:inline">Corporación</span>
           </p>
-          <p className="text-blue-300 text-[11px] font-medium">
-            Recorrido Virtual Interactivo
+          <p className="text-blue-300 text-[9px] md:text-[11px] font-medium hidden sm:block">
+            Recorrido Virtual
           </p>
         </div>
 
         <div
-          className="ml-1 flex items-center gap-1 px-2 py-1 rounded-full"
+          className="hidden sm:flex ml-1 items-center gap-1 px-2 py-1 rounded-full"
           style={{ background: 'rgba(124,58,237,0.2)', border: '1px solid rgba(124,58,237,0.4)' }}
         >
           <Award size={11} className="text-purple-300" />
@@ -58,7 +58,7 @@ export default function Header() {
 
       {/* ── Centre: Property info pill ── */}
       <div
-        className="hidden md:flex items-center gap-4 px-5 py-2.5 rounded-2xl"
+        className="hidden lg:flex items-center gap-4 px-5 py-2.5 rounded-2xl"
         style={{
           background: 'rgba(8,6,24,0.65)',
           backdropFilter: 'blur(20px)',
@@ -81,7 +81,7 @@ export default function Header() {
 
       {/* ── Right: Contact ── */}
       <button
-        className="flex items-center gap-2 px-4 py-2.5 rounded-2xl pointer-events-auto transition-all duration-200"
+        className="flex items-center gap-2 px-3 md:px-4 py-2 md:py-2.5 rounded-xl md:rounded-2xl pointer-events-auto transition-all duration-200"
         style={{
           background: 'rgba(8,6,24,0.75)',
           backdropFilter: 'blur(20px)',
@@ -93,7 +93,7 @@ export default function Header() {
         onMouseLeave={e => (e.currentTarget.style.background = 'rgba(8,6,24,0.75)')}
       >
         <Phone size={14} className="text-blue-400" />
-        <span className="text-slate-200 text-xs font-semibold">Contáctanos</span>
+        <span className="hidden sm:inline text-slate-200 text-xs font-semibold">Contáctanos</span>
       </button>
     </motion.header>
   )

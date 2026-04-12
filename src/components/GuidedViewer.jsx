@@ -39,46 +39,46 @@ export default function GuidedViewer({ route, onExit }) {
       </div>
 
       {/* HUD Info Box (Top Center) */}
-      <div className="absolute top-[80px] left-1/2 -translate-x-1/2 z-50 pointer-events-none">
-        <div className="bg-black/60 backdrop-blur-md border border-white/10 px-6 py-2.5 rounded-full shadow-2xl flex items-center gap-3">
-           <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600/30 text-blue-400 text-xs font-bold border border-blue-500/30">
+      <div className="absolute top-[70px] md:top-[80px] left-1/2 -translate-x-1/2 z-50 pointer-events-none w-max max-w-[90vw]">
+        <div className="bg-black/60 backdrop-blur-md border border-white/10 px-4 md:px-6 py-2 md:py-2.5 rounded-full shadow-2xl flex items-center gap-2 md:gap-3">
+           <div className="flex items-center justify-center w-5 h-5 md:w-6 md:h-6 rounded-full bg-blue-600/30 text-blue-400 text-[10px] md:text-xs font-bold border border-blue-500/30">
              {currentIndex + 1}
            </div>
            <div>
-             <p className="text-slate-300 text-[10px] font-bold uppercase tracking-wider leading-none mb-0.5">Habitación Actual</p>
-             <p className="text-white text-sm font-semibold font-['Outfit'] leading-none">{currentRoom.name}</p>
+             <p className="text-slate-300 text-[9px] md:text-[10px] font-bold uppercase tracking-wider leading-none mb-0.5">Habitación Actual</p>
+             <p className="text-white text-xs md:text-sm font-semibold font-['Outfit'] leading-none truncate max-w-[150px] sm:max-w-[300px]">{currentRoom.name}</p>
            </div>
-           <div className="pl-3 ml-3 border-l border-white/10 text-slate-400 text-xs font-medium">
+           <div className="pl-2 md:pl-3 ml-1 md:ml-3 border-l border-white/10 text-slate-400 text-[10px] md:text-xs font-medium whitespace-nowrap">
              de {route.length}
            </div>
         </div>
       </div>
 
       {/* Exit Button (Top Right, if Header doesn't conflict) */}
-      <div className="absolute top-24 right-5 z-50 pointer-events-auto">
+      <div className="absolute top-20 md:top-24 right-4 md:right-5 z-50 pointer-events-auto">
         <button 
           onClick={onExit}
-          className="bg-black/60 hover:bg-red-500/20 hover:border-red-500/50 backdrop-blur-md border border-white/10 text-white p-3 rounded-full shadow-lg transition-all"
+          className="bg-black/60 hover:bg-red-500/20 hover:border-red-500/50 backdrop-blur-md border border-white/10 text-white p-2 md:p-3 rounded-full shadow-lg transition-all"
           title="Salir al Creador de Rutas"
         >
-          <LayoutDashboard size={20} />
+          <LayoutDashboard size={18} className="md:w-5 md:h-5" />
         </button>
       </div>
 
       {/* HUD Navigation Controls (Bottom Center) */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 pointer-events-auto flex items-center gap-4">
+      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-50 pointer-events-auto flex items-center gap-2 md:gap-4 w-full md:w-auto justify-center px-4">
         
         {/* Prev Button */}
         <button 
           onClick={handlePrev}
           disabled={isFirst}
-          className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-all duration-300 ${
+          className={`flex items-center justify-center gap-1 md:gap-2 flex-1 md:flex-none px-4 md:px-6 py-2.5 md:py-3 rounded-full font-bold text-sm md:text-base transition-all duration-300 ${
             isFirst 
               ? 'bg-black/40 text-slate-500 border border-white/5 cursor-not-allowed backdrop-blur-md'
               : 'bg-black/70 hover:bg-blue-600 border border-white/10 text-white backdrop-blur-md shadow-2xl hover:shadow-blue-500/30'
           }`}
         >
-          <ChevronLeft size={20} />
+          <ChevronLeft size={18} className="md:w-5 md:h-5" />
           <span>Anterior</span>
         </button>
 
@@ -86,14 +86,14 @@ export default function GuidedViewer({ route, onExit }) {
         <button 
           onClick={handleNext}
           disabled={isLast}
-          className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-all duration-300 ${
+          className={`flex items-center justify-center gap-1 md:gap-2 flex-1 md:flex-none px-4 md:px-6 py-2.5 md:py-3 rounded-full font-bold text-sm md:text-base transition-all duration-300 ${
             isLast 
               ? 'bg-black/40 text-slate-500 border border-white/5 cursor-not-allowed backdrop-blur-md'
               : 'bg-black/70 hover:bg-blue-600 border border-white/10 text-white backdrop-blur-md shadow-2xl hover:shadow-blue-500/30'
           }`}
         >
           <span>Siguiente</span>
-          <ChevronRight size={20} />
+          <ChevronRight size={18} className="md:w-5 md:h-5" />
         </button>
 
       </div>
